@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Verify</title>
+</head>
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
+<script>
+
+function get_action(form) 
+{
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        return false;
+    }
+    else
+    {
+         document.getElementById('captcha').innerHTML="Captcha completed";
+        return true; 
+    }
+}
+
+</script>
+<body>
+	<div class="g-recaptcha" id="rcaptcha"  data-sitekey="6LegFxEdAAAAAOxkZY-Y_Qfdkbs28W-55iViMDrm"></div>
+<span id="captcha" style="color:red" /></span> <!-- this will show captcha errors -->
+</body>
+</html>
+
+
+<!-- Secret Key: 6LegFxEdAAAAAIk99e9ZS4-bZMpz48uC6-hgXGXV -->
+<!-- Site Key: 6LegFxEdAAAAAOxkZY-Y_Qfdkbs28W-55iViMDrm -->
